@@ -1,12 +1,12 @@
-(defvar *dmacro-str* nil "繰返し文字列")
+(defvar *dmacro-str* nil "Repeat String")
 (setq dmacro-keys (concat *dmacro-key* *dmacro-key*))
 
 (defun dmacro-exec ()
-  "キー操作の繰返しを検出し実行する"
+  "Detect the repetition of key operation and Run"
   (interactive)
   (let ((s (dmacro-get)))
     (if (null s)
-        (message "操作の繰返しが見つかりません")
+        (message "Repetition of the operation can not be found")
       (execute-kbd-macro s)
       )
     ))
